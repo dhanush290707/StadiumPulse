@@ -47,6 +47,29 @@ Follow these steps to run the StadiumPulse platform locally.
 
 4. Open your browser and navigate to the local URL provided by Vite (usually `http://localhost:5173`).
 
+## Deployment
+
+StadiumPulse is configured for containerized deployment on GCP Cloud Run using a multi-stage Docker build and Nginx.
+
+### Deploying to GCP Cloud Run
+
+1. **Authenticate with Google Cloud:**
+   ```bash
+   gcloud auth login
+   gcloud config set project YOUR_PROJECT_ID
+   ```
+
+2. **Build and Deploy:**
+   Use the `gcloud run deploy` command to build the Docker image using Cloud Build and deploy it to Cloud Run in one step:
+   ```bash
+   gcloud run deploy stadiumpulse \
+     --source . \
+     --port 8080 \
+     --allow-unauthenticated \
+     --region us-central1
+   ```
+   *Note: Replace `us-central1` with your preferred GCP region.*
+
 ## Project Structure
 
 The codebase is organized modularly for scalability:

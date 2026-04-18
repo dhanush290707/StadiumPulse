@@ -43,3 +43,17 @@ coverage
 .gemini
 *.cache
 .eslintcache
+
+# Vite cache
+.vite/
+
+# Cloud and Deployments
+.gcloudignore
+.firebase/
+.vercel/
+.netlify/
+
+# Secrets and Keys
+*.pem
+*.key
+*.cert
