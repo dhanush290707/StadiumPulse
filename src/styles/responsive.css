@@ -1,0 +1,685 @@
+/* ============================================================
+   Responsive Breakpoints
+   Mobile-first refinements for small screens
+   ============================================================ */
+
+/* =========================
+   SMALL MOBILE (< 480px)
+   ========================= */
+@media (max-width: 480px) {
+
+  /* --- Bottom Nav: hide labels, icon-only --- */
+  .bottom-nav {
+    height: 56px;
+  }
+
+  .bottom-nav__label {
+    display: none;
+  }
+
+  .bottom-nav__item {
+    padding: var(--sp-2);
+    min-width: 44px;
+  }
+
+  .bottom-nav__icon {
+    font-size: var(--fs-lg);
+  }
+
+  .bottom-nav__item--active::after {
+    width: 18px;
+  }
+
+  /* --- Global Page Padding --- */
+  .dashboard,
+  .crowd-map,
+  .food-order,
+  .navigate,
+  .live-feed,
+  .ticket-view {
+    padding: var(--sp-3);
+    padding-bottom: calc(56px + var(--sp-6));
+    gap: var(--sp-3);
+  }
+
+  /* --- Header compact --- */
+  .app-header {
+    height: 48px;
+    padding: 0 var(--sp-3);
+  }
+
+  .app-header__logo {
+    width: 24px;
+    height: 24px;
+    font-size: var(--fs-xs);
+  }
+
+  .app-header__name {
+    font-size: var(--fs-sm);
+  }
+
+  .app-header__notification {
+    width: 32px;
+    height: 32px;
+    font-size: var(--fs-sm);
+  }
+
+  .app-header__avatar {
+    width: 28px;
+    height: 28px;
+    font-size: var(--fs-xs);
+  }
+
+  /* --- Event Hero compact --- */
+  .event-hero {
+    padding: var(--sp-4);
+  }
+
+  .event-hero__team-logo {
+    width: 42px;
+    height: 42px;
+    font-size: var(--fs-lg);
+    border-radius: var(--radius-md);
+  }
+
+  .event-hero__score {
+    font-size: var(--fs-2xl);
+  }
+
+  .event-hero__team-name {
+    font-size: var(--fs-xs);
+  }
+
+  .event-hero__team-record {
+    font-size: 10px;
+  }
+
+  .event-hero__scoreboard {
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-3);
+  }
+
+  .event-hero__venue {
+    font-size: 10px;
+  }
+
+  /* --- Quick Actions compact 3-col --- */
+  .quick-actions__grid {
+    gap: var(--sp-2);
+  }
+
+  .quick-action-btn {
+    padding: var(--sp-3) var(--sp-1);
+  }
+
+  .quick-action-btn__icon {
+    width: 36px;
+    height: 36px;
+    font-size: var(--fs-md);
+  }
+
+  .quick-action-btn__label {
+    font-size: 10px;
+  }
+
+  /* --- Insight cards compact --- */
+  .insight-card {
+    padding: var(--sp-3);
+    gap: var(--sp-3);
+  }
+
+  .insight-card__icon {
+    width: 36px;
+    height: 36px;
+    font-size: var(--fs-md);
+  }
+
+  .insight-card__label {
+    font-size: var(--fs-xs);
+  }
+
+  .insight-card__value {
+    font-size: 10px;
+  }
+
+  /* --- Alert Banner compact --- */
+  .alert-banner {
+    padding: var(--sp-2) var(--sp-3);
+  }
+
+  .alert-banner__title {
+    font-size: var(--fs-xs);
+  }
+
+  .alert-banner__text {
+    font-size: 10px;
+  }
+
+  /* --- Countdown compact --- */
+  .countdown-widget {
+    padding: var(--sp-3);
+    gap: var(--sp-3);
+  }
+
+  .countdown-widget__value {
+    font-size: var(--fs-base);
+  }
+
+  /* --- Crowd Map --- */
+  .venue-map-container {
+    padding: var(--sp-2);
+  }
+
+  .venue-svg {
+    max-height: 280px;
+  }
+
+  .venue-zone-label {
+    font-size: 7px;
+  }
+
+  .venue-center-label {
+    font-size: 9px;
+  }
+
+  .zone-detail {
+    padding: var(--sp-4);
+  }
+
+  .zone-detail__stats {
+    gap: var(--sp-2);
+  }
+
+  .zone-list-item {
+    padding: var(--sp-2) var(--sp-3);
+  }
+
+  /* --- Vendor Cards compact --- */
+  .vendor-card {
+    padding: var(--sp-3);
+    gap: var(--sp-3);
+  }
+
+  .vendor-card__image {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+  }
+
+  .vendor-card__name {
+    font-size: var(--fs-sm);
+  }
+
+  .vendor-card__meta {
+    gap: var(--sp-2);
+  }
+
+  .vendor-card__wait {
+    font-size: var(--fs-xs);
+  }
+
+  .vendor-card__distance {
+    font-size: 10px;
+  }
+
+  /* --- Menu Modal full-screen on mobile --- */
+  .menu-modal {
+    max-height: 92vh;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  }
+
+  .menu-modal__header {
+    padding: var(--sp-2) var(--sp-4) var(--sp-3);
+  }
+
+  .menu-modal__items {
+    padding: var(--sp-3) var(--sp-4);
+  }
+
+  .menu-modal__footer {
+    padding: var(--sp-3) var(--sp-4);
+    padding-bottom: calc(var(--sp-3) + 8px);
+  }
+
+  .menu-item {
+    padding: var(--sp-2) 0;
+  }
+
+  .menu-item__name {
+    font-size: var(--fs-sm);
+  }
+
+  .menu-item__price {
+    font-size: var(--fs-sm);
+  }
+
+  .menu-item__add-btn {
+    width: 32px;
+    height: 32px;
+    font-size: var(--fs-base);
+  }
+
+  /* --- Order Tracker compact --- */
+  .order-tracker {
+    padding: var(--sp-4);
+  }
+
+  .order-step__dot {
+    width: 28px;
+    height: 28px;
+    font-size: var(--fs-xs);
+  }
+
+  .order-step__connector {
+    top: 14px;
+    left: calc(50% + 18px);
+    width: calc(100% - 32px);
+  }
+
+  /* --- Ticket compact --- */
+  .digital-ticket {
+    padding: var(--sp-4);
+  }
+
+  .digital-ticket__team-logo {
+    width: 48px;
+    height: 48px;
+    font-size: var(--fs-xl);
+  }
+
+  .digital-ticket__team-name {
+    font-size: var(--fs-sm);
+  }
+
+  .digital-ticket__vs {
+    font-size: var(--fs-lg);
+  }
+
+  .digital-ticket__seat-item-value {
+    font-size: var(--fs-lg);
+  }
+
+  .digital-ticket__details {
+    gap: var(--sp-3);
+  }
+
+  .digital-ticket__detail-value {
+    font-size: var(--fs-sm);
+  }
+
+  .digital-ticket__barcode-bars {
+    height: 40px;
+  }
+
+  .upgrade-prompt {
+    padding: var(--sp-4);
+  }
+
+  .upgrade-prompt__options {
+    gap: var(--sp-2);
+  }
+
+  .upgrade-option {
+    padding: var(--sp-3);
+  }
+
+  .upgrade-option__price {
+    font-size: var(--fs-base);
+  }
+
+  .weather-widget {
+    padding: var(--sp-3);
+    gap: var(--sp-3);
+  }
+
+  .weather-widget__icon {
+    font-size: 32px;
+  }
+
+  .weather-widget__temp {
+    font-size: var(--fs-xl);
+  }
+
+  /* --- Seat Finder compact --- */
+  .seat-finder {
+    padding: var(--sp-4);
+  }
+
+  .seat-finder__your-seat {
+    padding: var(--sp-3);
+    gap: var(--sp-3);
+    flex-wrap: wrap;
+  }
+
+  .seat-finder__seat-icon {
+    width: 44px;
+    height: 44px;
+    font-size: var(--fs-xl);
+  }
+
+  .seat-finder__seat-number {
+    font-size: var(--fs-base);
+  }
+
+  .seat-finder__directions-btn {
+    width: 100%;
+    justify-content: center;
+    padding: var(--sp-3);
+    font-size: var(--fs-xs);
+  }
+
+  /* --- Amenity cards compact --- */
+  .amenity-card {
+    padding: var(--sp-2) var(--sp-3);
+    gap: var(--sp-2);
+  }
+
+  .amenity-card__icon {
+    width: 34px;
+    height: 34px;
+    font-size: var(--fs-sm);
+  }
+
+  .amenity-card__name {
+    font-size: var(--fs-xs);
+  }
+
+  .amenity-card__distance {
+    font-size: var(--fs-xs);
+  }
+
+  /* --- Emergency grid compact --- */
+  .emergency-grid {
+    gap: var(--sp-2);
+  }
+
+  .emergency-card {
+    padding: var(--sp-3);
+  }
+
+  .emergency-card__icon {
+    font-size: var(--fs-xl);
+  }
+
+  .emergency-card__label {
+    font-size: var(--fs-xs);
+  }
+
+  .emergency-card__desc {
+    font-size: 10px;
+  }
+
+  /* --- Score Card compact --- */
+  .score-card {
+    padding: var(--sp-4);
+  }
+
+  .score-card__team-badge {
+    width: 38px;
+    height: 38px;
+    font-size: var(--fs-md);
+  }
+
+  .score-card__big-score {
+    font-size: var(--fs-2xl);
+  }
+
+  .score-card__team-name {
+    font-size: var(--fs-xs);
+  }
+
+  .score-card__quarters {
+    font-size: 10px;
+  }
+
+  .score-card__quarter-header,
+  .score-card__quarter-cell {
+    padding: var(--sp-1);
+    font-size: 10px;
+  }
+
+  /* --- Stats grid --- */
+  .stats-grid {
+    gap: var(--sp-2);
+  }
+
+  .stat-card {
+    padding: var(--sp-3);
+  }
+
+  .stat-card__value {
+    font-size: var(--fs-base);
+  }
+
+  /* --- Sentiment compact --- */
+  .sentiment-card {
+    padding: var(--sp-4);
+  }
+
+  .sentiment-card__emoji {
+    font-size: var(--fs-2xl);
+  }
+
+  /* --- Timeline compact --- */
+  .timeline-event__title {
+    font-size: var(--fs-xs);
+  }
+
+  .timeline-event__desc {
+    font-size: 10px;
+  }
+
+  /* --- Notification Panel full-width --- */
+  .notification-panel {
+    max-width: 100%;
+  }
+
+  .notification-panel__header {
+    padding: var(--sp-4);
+  }
+
+  .notification-panel__list {
+    padding: var(--sp-3);
+    gap: var(--sp-2);
+  }
+
+  .notification-item {
+    padding: var(--sp-3);
+  }
+
+  .notification-item__icon {
+    width: 34px;
+    height: 34px;
+    font-size: var(--fs-sm);
+  }
+
+  .notification-item__title {
+    font-size: var(--fs-xs);
+  }
+
+  .notification-item__text {
+    font-size: 10px;
+  }
+
+  /* --- Section titles compact --- */
+  .quick-actions__title,
+  .insights-section__title,
+  .zone-list__title,
+  .stats-section__title,
+  .timeline-section__title,
+  .sentiment-card__title,
+  .nearby-amenities__title,
+  .emergency-section__title {
+    font-size: var(--fs-xs);
+    margin-bottom: var(--sp-2);
+  }
+
+  /* --- Page titles compact --- */
+  .crowd-map__title,
+  .food-order__title,
+  .navigate__title,
+  .live-feed__title,
+  .ticket-view__title {
+    font-size: var(--fs-lg);
+  }
+
+  /* --- Amenity filter pills compact --- */
+  .amenity-filter-btn {
+    padding: var(--sp-1) var(--sp-2);
+    font-size: 10px;
+    gap: 2px;
+  }
+
+  /* --- Food category pills compact --- */
+  .food-category-btn {
+    padding: var(--sp-1) var(--sp-3);
+    font-size: var(--fs-xs);
+  }
+
+  /* --- Score card quarter grid tighter --- */
+  .score-card__quarters {
+    grid-template-columns: 1.5fr repeat(4, 1fr) 1fr;
+  }
+
+  /* --- Crowd map legend compact --- */
+  .crowd-map__legend {
+    padding: var(--sp-2) var(--sp-3);
+    gap: var(--sp-3);
+  }
+
+  .crowd-map__legend-item {
+    font-size: 10px;
+    gap: var(--sp-1);
+  }
+
+  .crowd-map__legend-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* --- Zone detail panel compact --- */
+  .zone-detail__recommendation {
+    font-size: var(--fs-xs);
+    padding: var(--sp-2) var(--sp-3);
+  }
+
+  /* --- Sentiment emoji smaller --- */
+  .sentiment-card__emoji {
+    font-size: var(--fs-2xl);
+  }
+
+  /* --- Timeline connector fix --- */
+  .timeline-event::before {
+    left: 13px;
+  }
+
+  .timeline-event__time {
+    width: 28px;
+    font-size: 10px;
+  }
+
+  .timeline-event__dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* =========================
+   MEDIUM MOBILE (481-640px)
+   ========================= */
+@media (min-width: 481px) and (max-width: 640px) {
+
+  .bottom-nav {
+    height: 60px;
+  }
+
+  .bottom-nav__label {
+    font-size: 9px;
+  }
+
+  .bottom-nav__item {
+    padding: var(--sp-1) var(--sp-2);
+    min-width: 48px;
+    gap: 2px;
+  }
+
+  .bottom-nav__icon {
+    font-size: var(--fs-md);
+  }
+
+  .dashboard,
+  .crowd-map,
+  .food-order,
+  .navigate,
+  .live-feed,
+  .ticket-view {
+    padding-bottom: calc(60px + var(--sp-6));
+  }
+
+  .event-hero__team-logo {
+    width: 48px;
+    height: 48px;
+    font-size: var(--fs-xl);
+  }
+
+  .event-hero__score {
+    font-size: var(--fs-2xl);
+  }
+
+  .notification-panel {
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   TABLET & UP (> 768px)
+   ========================= */
+@media (min-width: 768px) {
+
+  /* Let content breathe on wider screens */
+  .dashboard,
+  .crowd-map,
+  .food-order,
+  .navigate,
+  .live-feed,
+  .ticket-view {
+    max-width: 600px;
+  }
+
+  .bottom-nav__items {
+    max-width: 600px;
+  }
+
+  /* Stats can be 3-col on tablet */
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Bigger Score on wide screens */
+  .event-hero__score {
+    font-size: var(--fs-4xl);
+  }
+
+  .score-card__big-score {
+    font-size: var(--fs-4xl);
+  }
+
+  .event-hero__team-logo {
+    width: 64px;
+    height: 64px;
+    font-size: var(--fs-3xl);
+  }
+}
+
+/* =========================
+   DESKTOP (> 1024px)
+   ========================= */
+@media (min-width: 1024px) {
+  .notification-panel {
+    max-width: 420px;
+  }
+
+  .menu-modal {
+    max-width: 480px;
+  }
+}

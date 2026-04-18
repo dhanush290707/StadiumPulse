@@ -1,0 +1,280 @@
+/* ============================================================
+   Crowd Map Styles
+   ============================================================ */
+
+.crowd-map {
+  padding: var(--sp-4);
+  padding-bottom: calc(var(--nav-height) + var(--sp-8));
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.crowd-map__header {
+  animation: fadeIn 0.4s var(--ease-out) forwards;
+}
+
+.crowd-map__title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--sp-1);
+}
+
+.crowd-map__subtitle {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-secondary);
+}
+
+/* --- Legend --- */
+.crowd-map__legend {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--radius-lg);
+  animation: fadeIn 0.4s var(--ease-out) 0.1s forwards;
+  opacity: 0;
+}
+
+.crowd-map__legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--clr-text-secondary);
+}
+
+.crowd-map__legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+}
+
+.crowd-map__legend-dot--low {
+  background: var(--clr-accent);
+  box-shadow: 0 0 6px var(--clr-accent-glow);
+}
+
+.crowd-map__legend-dot--medium {
+  background: var(--clr-warning);
+  box-shadow: 0 0 6px var(--clr-warning-glow);
+}
+
+.crowd-map__legend-dot--high {
+  background: var(--clr-danger);
+  box-shadow: 0 0 6px var(--clr-danger-glow);
+}
+
+/* --- Venue SVG Container --- */
+.venue-map-container {
+  border-radius: var(--radius-xl);
+  padding: var(--sp-4);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInScale 0.5s var(--ease-out) 0.15s forwards;
+  opacity: 0;
+}
+
+.venue-map-container__update {
+  position: absolute;
+  top: var(--sp-3);
+  right: var(--sp-3);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+}
+
+.venue-svg {
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+}
+
+.venue-zone {
+  cursor: pointer;
+  transition: all var(--dur-normal) var(--ease-out);
+  stroke: hsla(220, 30%, 50%, 0.2);
+  stroke-width: 1;
+}
+
+.venue-zone:hover {
+  stroke: var(--clr-primary);
+  stroke-width: 2;
+  filter: brightness(1.2);
+}
+
+.venue-zone--selected {
+  stroke: var(--clr-primary-light);
+  stroke-width: 2.5;
+  filter: brightness(1.3);
+}
+
+.venue-zone--low { fill: hsla(160, 84%, 39%, 0.35); }
+.venue-zone--medium { fill: hsla(38, 92%, 50%, 0.4); }
+.venue-zone--high { fill: hsla(0, 84%, 60%, 0.4); }
+
+.venue-zone--low:hover { fill: hsla(160, 84%, 39%, 0.5); }
+.venue-zone--medium:hover { fill: hsla(38, 92%, 50%, 0.55); }
+.venue-zone--high:hover { fill: hsla(0, 84%, 60%, 0.55); }
+
+.venue-zone-label {
+  font-size: 9px;
+  font-weight: var(--fw-semibold);
+  fill: var(--clr-text-primary);
+  pointer-events: none;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.venue-center-field {
+  fill: hsla(160, 84%, 39%, 0.12);
+  stroke: hsla(160, 84%, 39%, 0.3);
+  stroke-width: 1;
+}
+
+.venue-center-label {
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  fill: var(--clr-text-muted);
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+/* --- Zone Detail Panel --- */
+.zone-detail {
+  border-radius: var(--radius-xl);
+  padding: var(--sp-5);
+  animation: fadeInUp 0.3s var(--ease-out) forwards;
+}
+
+.zone-detail__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-4);
+}
+
+.zone-detail__name {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+}
+
+.zone-detail__close {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--clr-bg-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--dur-fast) ease;
+}
+
+.zone-detail__close:hover {
+  background: var(--clr-bg-active);
+}
+
+.zone-detail__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.zone-detail__stat {
+  text-align: center;
+  padding: var(--sp-3);
+  border-radius: var(--radius-md);
+  background: var(--clr-bg-primary);
+}
+
+.zone-detail__stat-value {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  margin-bottom: 2px;
+}
+
+.zone-detail__stat-label {
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+}
+
+.zone-detail__recommendation {
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--radius-md);
+  background: hsla(217, 91%, 60%, 0.08);
+  border: 1px solid hsla(217, 91%, 60%, 0.15);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--clr-primary-light);
+}
+
+.zone-detail__recommendation-icon {
+  font-size: var(--fs-lg);
+  flex-shrink: 0;
+}
+
+/* --- Zone List --- */
+.zone-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  animation: fadeInUp 0.4s var(--ease-out) 0.2s forwards;
+  opacity: 0;
+}
+
+.zone-list__title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--sp-2);
+}
+
+.zone-list-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--dur-normal) var(--ease-out);
+}
+
+.zone-list-item:hover {
+  background: var(--clr-bg-hover);
+  transform: translateX(4px);
+}
+
+.zone-list-item__indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.zone-list-item__name {
+  flex: 1;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+}
+
+.zone-list-item__density {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  font-family: var(--ff-mono);
+}
+
+.zone-list-item__trend {
+  font-size: var(--fs-sm);
+  width: 20px;
+  text-align: center;
+}
